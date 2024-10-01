@@ -3,8 +3,12 @@ const BASE_URL = "https://buondua.com";
 function execute(key, page) {
   if (!page) page = "0";
 
-  let response = fetch(BASE_URL+"/?search="+encodeURIComponent(key).replace("%2F", "/")+"&start="+page, {
+  let response = fetch(url, {
     method: "GET",
+    queries: {
+      search: encodeURIComponent(key).replace("%2F", "/"),
+      start: page,
+    },
   });
 
   if (response.ok) {
@@ -15,7 +19,7 @@ function execute(key, page) {
       var match = name.match(/\(\s*(\d+)\s*photos\s*\)/);
       data.push({
         name: name,
-        description: match[1],
+        description: match[1] + " photos",
         link: encodeURIComponent(
           e.select(".page-header a").first().attr("href")
         ).replace("%2F", "/"),
@@ -23,8 +27,10 @@ function execute(key, page) {
         host: BASE_URL,
       });
     });
-    var next = /\?start=(\d+)/.exec(doc.select(".pagination-next").attr("href"));
-        if (next) next = next[1];
+    var next = /\?start=(\d+)/.exec(
+      doc.select(".pagination-next").attr("href")
+    );
+    if (next) next = next[1];
     return Response.success(data, next);
   }
   return null;
