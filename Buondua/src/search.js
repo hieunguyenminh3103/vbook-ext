@@ -3,7 +3,7 @@ const BASE_URL = 'https://buondua.com'
 function execute(key, start) {
   if (!start) start = "0";
   
-  let response = fetch(BASE_URL + "/?search=" + key + "&start=" + start);
+  let response = fetch(BASE_URL + "/?search=hi" + "&start=" + start);
   if (response.ok) {
     let doc = response.html();
     var next = /\?start=(\d+)/.exec(doc.select(".pagination-next").attr("href"));
