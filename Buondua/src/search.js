@@ -4,12 +4,17 @@ function execute(key, start) {
   let response = fetch(BASE_URL + "/?search" + key + "&start=" + start);
   if (response.ok) {
     let doc = response.html();
-    let nextLi = doc
-      .select(".pagination-list")
-      .select("li:has(a.is-current) + li")
-      .last();
-    let nextHref = nextLi.attr("href");
-    let next = nextHref.match(/start=(\d+)/);
+    let next;
+    doc
+      .select(".pagination")
+      .select("a.pagination-next")
+      .forEach((item) => {
+        if (item.text() === "Next") {
+          var link = item.attr("href");
+          next = link.match(/start=(\d+)/);
+        }
+      });
+
     let data = [];
     doc.select(".main-container .main-body .blog.columns").forEach((e) => {
       e.select(".items-row.column").forEach((item) => {
