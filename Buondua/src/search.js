@@ -1,7 +1,7 @@
 load("config.js");
 function execute(key, start) {
   if (!start) start = "0";
-  let response = fetch(BASE_URL + "/?search" + key + "&start=" + start);
+  let response = fetch(BASE_URL + "/?search=" + key + "&start=" + start);
   if (response.ok) {
     let doc = response.html();
     let next;
