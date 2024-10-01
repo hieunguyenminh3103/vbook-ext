@@ -1,20 +1,12 @@
-load("config.js");
+const BASE_URL = 'https://buondua.com'
+
 function execute(key, start) {
   if (!start) start = "0";
+  
   let response = fetch(BASE_URL + "/?search=" + key + "&start=" + start);
   if (response.ok) {
     let doc = response.html();
-    let next;
-    doc
-      .select(".pagination")
-      .select("a.pagination-next")
-      .forEach((item) => {
-        if (item.text() === "Next") {
-          var link = item.attr("href");
-          next = link.match(/start=(\d+)/);
-        }
-      });
-
+    var next = /\?start=(\d+)/.exec(doc.select(".pagination-next").attr("href"));
     let data = [];
     doc.select(".main-container .main-body .blog.columns").forEach((e) => {
       e.select(".items-row.column").forEach((item) => {
