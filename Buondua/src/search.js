@@ -3,7 +3,7 @@ const BASE_URL = "https://buondua.com";
 function execute(key, page) {
   if (!page) page = "0";
 
-  let response = fetch(url, {
+  let response = fetch(BASE_URL+"/", {
     method: "GET",
     queries: {
       search: encodeURIComponent(key).replace("%2F", "/"),
