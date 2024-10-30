@@ -20,10 +20,8 @@ function execute(url, page) {
                 host: BASE_URL,
             })
         });
-
-        var next = /\?start=(\d+)/.exec(doc.select(".pagination-next").attr("href"));
-        if (next) next = next[1];
-        else next = "0";
+        var next = doc.select(".pagination-next").first().attr("href").match(/start=(\d+)/)
+        if (next) next = next[1]; else next = '';
         return Response.success(data, next)
     }
     return null;
