@@ -1,9 +1,6 @@
-// mục lục 
+load('config.js');
 function execute(url) {
     url = decodeURIComponent(url)
-    // let id = /https:\/\/buondua.com\/([\w-]+(?:-\w+)*)/.exec(url);
-    // if (id) id = id[1];
-    // let newUrl = "https://buondua.com/" + id;
     let response= fetch(url);
     let doc = response.html();
     let div = doc.select(".pagination-list").first()
@@ -14,7 +11,7 @@ function execute(url) {
         data.push({
             name: e.select("a").text(),
             url: encodeURIComponent(e.select("a").attr("href")).replace("%2F","/"),
-            host: "https://buondua.com"
+            host: BASE_URL
         })
     }
 

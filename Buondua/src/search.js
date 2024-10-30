@@ -1,36 +1,27 @@
-const BASE_URL = "https://buondua.com";
-
+load('config.js');
 function execute(key, page) {
   if (!page) page = "0";
 
   let response = fetch(BASE_URL+"/", {
     method: "GET",
     queries: {
-      search: encodeURIComponent(key).replace("%2F", "/"),
+      search: key,
       start: page,
     },
   });
-
   if (response.ok) {
     let doc = response.html();
     let data = [];
-    doc.select(".blog.columns > .items-row.column").forEach((e) => {
-      var name = e.select(".item-thumb img").first().attr("alt");
-      var match = name.match(/\(\s*(\d+)\s*photos\s*\)/);
-      data.push({
-        name: name,
-        description: match[1] + " photos",
-        link: encodeURIComponent(
-          e.select(".page-header a").first().attr("href")
-        ).replace("%2F", "/"),
-        cover: e.select(".item-thumb img").firts().attr("src"),
-        host: BASE_URL,
-      });
-    });
-    var next = /\?start=(\d+)/.exec(
-      doc.select(".pagination-next").attr("href")
-    );
-    if (next) next = next[1];
+    doc.select(".blog.columns > .items-row.column").forEach(e => {
+            data.push({
+                name: e.select(".item-thumb img").attr("alt"),
+                link: BASE_URL +  encodeURIComponent(e.select(".page-header a").first().attr("href")).replace("%2F","/") ,
+                cover: e.select(".item-thumb img").attr("src"),
+                host: BASE_URL,
+            })
+        });
+    var next = doc.select(".pagination-next").first().attr("href").match(/start=(\d+)/)
+    if (next) next = next[1]; else next = '';
     return Response.success(data, next);
   }
   return null;
