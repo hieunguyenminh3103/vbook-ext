@@ -1,13 +1,14 @@
 load('config.js');
 function execute(url) {
-    let response= fetch(url);
+    let id = url.match(/(\d+)\.html/)[1];
+    let response= fetch(BASE_URL + '/' + id + ".html");
     if(response.ok){
         let doc = response.html();
         let data = [];
         let lastPage = doc.select('.nav-links [title="Last"]');
         if(lastPage.length){
             lastPage = lastPage.text();
-            let id = url.match(/(\d+)\.html/)[1];
+           
             for(let i=1; i<=lastPage; i++)
             {
                 data.push({
