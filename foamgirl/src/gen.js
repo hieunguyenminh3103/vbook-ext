@@ -1,10 +1,7 @@
 load('config.js');
 function execute(url, page) {
     if (!page) page = "1";
-    url = url.replace(/^(?:https?:\/\/)?(?:[^@\n]+@)?(?:www\.)?([^:\/\n?]+)/img, BASE_URL);
-    url = url.replace(BASE_URL, "");
     url = url.replace(/\/$/, "");
-    if (!page) page = '1';
     let response = fetch(BASE_URL + url+'/page/'+page, {
         method: "GET"
     })
@@ -13,15 +10,10 @@ function execute(url, page) {
         let doc = response.html();
         doc.select("#index_ajax_list > li").forEach(e => {
             var insidePageUrl = e.select(".meta-title").attr("href")
-            let insidePage = fetch(insidePageUrl, {
-                method: "GET"
-            })
-            let cover = (insidePage.ok) ? insidePage.html().select("div#image_div a img").first().attr("src") : null;
             data.push({
                 name: e.select(".meta-title").text(),
-                link: insidePageUrl,
-                cover: cover,
-                host: BASE_URL,
+                link: e.select(".meta-title").attr("href"),
+                cover: e.select("img").attr('data-original'),
             })
         });
         var next = doc.select(".next.page-numbers").first().attr("href").match(/page\/(\d+)/)
