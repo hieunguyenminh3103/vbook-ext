@@ -9,7 +9,6 @@ function execute(url, page) {
         let data = [];
         let doc = response.html();
         doc.select("#index_ajax_list > li").forEach(e => {
-            var insidePageUrl = e.select(".meta-title").attr("href")
             data.push({
                 name: e.select(".meta-title").text(),
                 link: e.select(".meta-title").attr("href"),
