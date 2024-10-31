@@ -1,13 +1,13 @@
 function execute() {
     return Response.success([
-        {title: "Home", input: "https://foamgirl.net/", script: "gen.js"},
-        {title: "Chinese", input: "https://foamgirl.net/chinese/", script: "gen.js"},
-        {title: "Japan", input: "https://foamgirl.net/japan/", script: "gen.js"},
-        {title: "Japan Aidol", input: "https://foamgirl.net/aidol/", script: "gen.js"},
-        {title: "Japan Gravure", input: "https://foamgirl.net/gravure/", script: "gen.js"},
-        {title: "Japan Magazine", input: "https://foamgirl.net/magazine/", script: "gen.js"},
-        {title: "Korea", input: "https://foamgirl.net/korea/", script: "gen.js"},
-        {title: "Thailand", input: "https://foamgirl.net/thailand/", script: "gen.js"},
-        {title: "Cosplay", input: "https://foamgirl.net/cosplay/", script: "gen.js"},
+        {title: "Home", input: "/", script: "gen.js"},
+        {title: "Chinese", input: "/chinese/", script: "gen.js"},
+        {title: "Japan", input: "/japan/", script: "gen.js"},
+        {title: "Japan Aidol", input: "/aidol/", script: "gen.js"},
+        {title: "Japan Gravure", input: "/gravure/", script: "gen.js"},
+        {title: "Japan Magazine", input: "/magazine/", script: "gen.js"},
+        {title: "Korea", input: "/korea/", script: "gen.js"},
+        {title: "Thailand", input: "/thailand/", script: "gen.js"},
+        {title: "Cosplay", input: "/cosplay/", script: "gen.js"},
     ]);
 }
