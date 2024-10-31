@@ -6,6 +6,10 @@
 https://raw.githubusercontent.com/hieunguyenminh3103/vbook-ext/main/plugin.json
 ```
 
+```link
+https://gitlab.com/hieunm3103/vbook-extension/-/raw/main/plugin.json
+```
+
 ## Thông tin extension
 
 - Tạo một tệp với tên `plugin.json` vào thư mục của extensions, cấu trúc của tệp có dạng như sau
