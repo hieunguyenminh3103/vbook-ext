@@ -1,6 +1,5 @@
 load('config.js');
 function execute(url) {
-    url = decodeURIComponent(url)
     let response = fetch(url);
     if (response.ok) {
         let doc = response.html();
@@ -12,7 +11,6 @@ function execute(url) {
                 script: "gen.js"
             })
         });
-        Console.log(url)
         return Response.success({
             name: doc.select(".item_title h1").text(),
             cover: doc.select("div#image_div a img").first().attr("src"),
