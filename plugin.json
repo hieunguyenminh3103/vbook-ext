@@ -1,20 +1,20 @@
 {
-    "metadata": {
-        "author": "hieu05",
-        "description": "quỷ seg"
-    },
-    "data": [
-        {
-            "name": "Buondua v1",
-            "author": "hieu05",
-            "path": "https://raw.githubusercontent.com/hieunguyenminh3103/vbook-ext/main/Buondua/plugin.zip",
-            "version": 1,
-            "source": "https://buondua.com/",
-            "icon": "https://raw.githubusercontent.com/hieunguyenminh3103/vbook-ext/main/Buondua/icon.png",
-            "description": "Tập Hợp Album của Xiuren...",
-            "type": "comic",
-            "locale": "vi_VN",
-            "tag": "nsfw"
-        }
-    ]
+  "metadata": {
+    "author": "hieu05",
+    "description": "quỷ seg"
+  },
+  "data": [
+    {
+      "name": "Buondua v2",
+      "author": "hieu05",
+      "path": "https://raw.githubusercontent.com/hieunguyenminh3103/vbook-ext/main/Buondua/plugin.zip",
+      "version": 2,
+      "source": "https://buondua.com/",
+      "icon": "https://raw.githubusercontent.com/hieunguyenminh3103/vbook-ext/main/Buondua/icon.png",
+      "description": "Tập Hợp Album của Xiuren...",
+      "type": "comic",
+      "locale": "vi_VN",
+      "tag": "nsfw"
+    }
+  ]
 }
