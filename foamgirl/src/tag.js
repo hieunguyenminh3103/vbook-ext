@@ -1,5 +1,6 @@
 load('config.js');
 function execute(url, page) {
+    url = decodeURIComponent(url)
     if (!page) page = "1";
     url = url.replace(/\/$/, "");
     let response = fetch(BASE_URL + url+'/page/'+page, {
@@ -19,5 +20,5 @@ function execute(url, page) {
         if (next) next = next[1]; else next = '';
         return Response.success(data, next)
     }
-    return Response.error("Something went wrong")
+    return Response.error("Loi cua lay tag")
 }

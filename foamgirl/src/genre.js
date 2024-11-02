@@ -5,10 +5,10 @@ function execute() {
         'Chinese', 'Japan', 'Korea', 'Cosplay'
     ]
     let resList = [
-        fetch(BASE_URL + '/chinese'),
-        fetch(BASE_URL + '/japan'),
-        fetch(BASE_URL + '/korea'),
-        fetch(BASE_URL + '/cosplay'),
+        fetch(BASE_URL + '/chinese/'),
+        fetch(BASE_URL + '/japan/'),
+        fetch(BASE_URL + '/korea/'),
+        fetch(BASE_URL + '/cosplay/'),
     ]
     let genres = [];
     for(let i = 0; i<resList.length; i++)
@@ -20,8 +20,8 @@ function execute() {
             if(tag.text() != "ALL") {
                 genres.push({
                     title: resName[i] + ' - ' + tag.text(),
-                    input: tag.attr('href').replace(BASE_URL, ''), 
-                    script: "gen.js"
+                    input: encodeURIComponent(tag.attr('href').replace(BASE_URL, '')), 
+                    script: "tag.js"
                 })
             }
         })
