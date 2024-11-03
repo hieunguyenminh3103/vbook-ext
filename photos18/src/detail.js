@@ -1,6 +1,7 @@
 load('config.js');
 function execute(url) {
-    let response= fetch(BASE_URL + url);
+    id = url.match(/v\/(.+)/)[1]
+    let response= fetch(BASE_URL + "/v/" + id);
     if (response.ok) {
         let doc = response.html();
         return Response.success({

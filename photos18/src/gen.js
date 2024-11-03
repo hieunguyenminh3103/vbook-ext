@@ -1,7 +1,6 @@
 load('config.js');
 function execute(url, page) {
     if (!page) page = "1";
-    url = url.match(/(\/)(?!.*\/)/)[1]
     let response = fetch(BASE_URL + url, {
         method: "GET",
         queries: {
