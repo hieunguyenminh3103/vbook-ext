@@ -1,7 +1,6 @@
 load('config.js');
 function execute(url) {
-    let id = url.match(/(\d+)\.html/)[1];
-    let response= fetch(BASE_URL + '/' + id + ".html");
+    let response= fetch(BASE_URL + url);
     if (response.ok) {
         let doc = response.html();
         let data = [];
@@ -11,6 +10,5 @@ function execute(url) {
 
         return Response.success(data);
     }
-
-    return null;
+    return Response.error("Loi khi lay anh");
 }

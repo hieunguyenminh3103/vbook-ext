@@ -13,7 +13,7 @@ function execute(url) {
             {
                 data.push({
                     name: "Page: " + i,
-                    url: BASE_URL + '/' + id + "_" + i + ".html"
+                    url: '/' + id + "_" + i + ".html"
                 })
             }
         } else {
@@ -23,12 +23,12 @@ function execute(url) {
                     if(check){
                         data.push({
                             name: item.text(),
-                            url: url
+                            url: url.replace(BASE_URL, '')
                         })
                     }else {
                         data.push({
                             name: item.attr('title'),
-                            url: item.attr('href'),
+                            url: item.attr('href').replace(BASE_URL, ''),
                         })
                     }
                 }
