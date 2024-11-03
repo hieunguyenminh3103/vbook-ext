@@ -20,8 +20,8 @@ function execute() {
             if(tag.text() != "ALL") {
                 genres.push({
                     title: resName[i] + ' - ' + tag.text(),
-                    input: tag.attr('href').replace(BASE_URL + '/', ''), 
-                    script: "tag.js"
+                    input: tag.attr('href').replace(BASE_URL, ''), 
+                    script: "gen.js"
 
                 })
             }

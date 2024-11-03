@@ -8,8 +8,8 @@ function execute(url) {
         doc.select("span.single-tags a").forEach((tag) => {
             genres.push({
                 title: tag.text(),
-                input: tag.attr("href"),
-                script: "tag.js"
+                input: tag.attr("href").replace(BASE_URL, ''),
+                script: "gen.js"
             })
         });
         return Response.success({
