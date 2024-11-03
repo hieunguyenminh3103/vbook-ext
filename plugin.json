@@ -28,5 +28,17 @@
       "locale": "vi_VN",
       "tag": "nsfw"
     }
+    {
+      "name": "Photos18",
+      "author": "hieu05",
+      "path": "https://raw.githubusercontent.com/hieunguyenminh3103/vbook-ext/main/photos18/plugin.zip",
+      "version": 1,
+      "source": "https://www.photos18.com/",
+      "icon": "https://raw.githubusercontent.com/hieunguyenminh3103/vbook-ext/main/photos18/icon.png",
+      "description": "Girl photos",
+      "type": "comic",
+      "locale": "vi_VN",
+      "tag": "nsfw"
+    }
   ]
 }
