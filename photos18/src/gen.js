@@ -1,6 +1,7 @@
 load('config.js');
 function execute(url, page) {
     if (!page) page = "1";
+    url = url.replace(/\/$/, '')
     let response = fetch(BASE_URL + url, {
         method: "GET",
         queries: {

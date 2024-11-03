@@ -2,11 +2,11 @@ load('config.js');
 function addFilter(listLatest) {
     let newList = []
     var sortCheck = [
-        { name: "Latest", path: "created" },
-        { name: "Hottest", path: "hits" },
-        { name: "Trend", path: "views" },
-        { name: "REC.", path: "score" },
-        { name: "Best", path: "likes" },
+        { name: "Latest", path: "created/" },
+        { name: "Hottest", path: "hits/" },
+        { name: "Trend", path: "views/" },
+        { name: "REC.", path: "score/" },
+        { name: "Best", path: "likes/" },
     ]
     for (let i = 0; i < listLatest.length; i++) {
         var element = listLatest[i]

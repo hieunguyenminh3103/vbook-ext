@@ -2,7 +2,7 @@
   "metadata": {
     "name": "Photos18",
     "author": "hieu05",
-    "version": 1.1,
+    "version": 1.2,
     "source": "https://www.photos18.com/",
     "regexp": "https://www.photos18.com/.+",
     "description": "Girl photos",
