@@ -21,7 +21,7 @@ function execute() {
                 genres.push({
                     title: resName[i] + ' - ' + tag.text(),
                     input: tag.attr('href').replace(BASE_URL + '/', ''), 
-                    script: "gen.js"
+                    script: "tag.js"
 
                 })
             }
