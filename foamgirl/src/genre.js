@@ -11,7 +11,7 @@ function execute() {
         fetch(BASE_URL + '/cosplay/'),
     ]
     let genres = [];
-    for(let i = 0; i<resList.length; i++)
+    for(let i = 0; i<4; i++)
     {
         let res = resList[i];
         let doc = res.html();
@@ -20,8 +20,9 @@ function execute() {
             if(tag.text() != "ALL") {
                 genres.push({
                     title: resName[i] + ' - ' + tag.text(),
-                    input: encodeURIComponent(tag.attr('href').replace(BASE_URL, '')), 
-                    script: "tag.js"
+                    input: tag.attr('href').replace(BASE_URL + '/', ''), 
+                    script: "gen.js"
+
                 })
             }
         })

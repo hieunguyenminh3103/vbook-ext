@@ -9,7 +9,7 @@ function execute(url) {
             genres.push({
                 title: tag.text(),
                 input: tag.attr("href"),
-                script: "tag.js"
+                script: "gen.js"
             })
         });
         return Response.success({
